@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --max-warnings 0",
-    "db:generate": "prisma generate"
+    "db:generate": "prisma generate",
+    "tsup:build": "tsup --env.NODE_ENV production",
+    "tsup:dev": "tsup --watch"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
