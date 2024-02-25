@@ -26,7 +26,10 @@ function ButtonContactMe() {
   return (
     <Link
       href="/work/contact"
-      className={cn("button button--solid min-w-[128px]", "md:button--big")}
+      className={cn(
+        "button animate-bounce button--solid min-w-[128px]",
+        "md:button--big",
+      )}
     >
       Get in Touch
     </Link>
@@ -36,9 +39,9 @@ function ButtonContactMe() {
 function ButtonResume() {
   return (
     <a
+      href="/kazimkayhan.pdf"
       target="_blank"
       rel="noreferrer nofollow"
-      href="https://www.figma.com/community/file/1176377524040948926"
       className={cn("button button--ghost px-2", "md:button--big md:px-2")}
     >
       <DocumentIcon className={cn("h-5 w-5")} />

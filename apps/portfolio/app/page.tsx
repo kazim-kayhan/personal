@@ -1,6 +1,6 @@
 import IndexContents from "../src/contents/index";
 
-export default function Page() {
+export default async function Page() {
   return (
     <main>
       <IndexContents />

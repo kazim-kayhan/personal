@@ -49,7 +49,7 @@ function HeaderTitle() {
             src="/assets/emojis/love-you-gesture.png"
             width={48}
             height={48}
-            onLoadingComplete={() => {
+            onLoad={() => {
               controls.start({
                 opacity: 1,
                 y: 0,

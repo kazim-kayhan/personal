@@ -50,7 +50,7 @@ function CleanIntuitive() {
 
   return (
     <>
-      <header className={cn("mb-8")}>
+      <header className={cn("mb-8 relative")}>
         <SectionTitle
           title="Eye Catching, Modern & Minimalist Design."
           caption="Clean & Intuitive"

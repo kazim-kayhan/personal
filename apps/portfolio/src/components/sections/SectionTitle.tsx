@@ -26,7 +26,7 @@ function SectionTitle({
   const Heading = as;
 
   return (
-    <div className={cn("content-wrapper")}>
+    <div className={cn("content-wrapper", "z-10")}>
       <Heading
         className={cn(
           "text-accent-600 mb-2 block font-black",
@@ -40,7 +40,7 @@ function SectionTitle({
         className={cn(
           "mb-4 text-3xl font-black text-slate-700",
           "lg:text-4xl",
-          "dark:text-slate-200",
+          "dark:text-slate-200 flex z-[9999]",
         )}
       >
         {title}

@@ -2,6 +2,7 @@ import "@repo/ui/globals.css";
 import { cn } from "@repo/ui/lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Boxes } from "../src/components/background-boxes";
 import WithNavigationFooter from "../src/layouts/WithNavigationFooter";
 import Provider from "../src/providers";
 
@@ -27,7 +28,10 @@ export default function RootLayout({
         )}
       >
         <Provider>
-          <WithNavigationFooter>{children}</WithNavigationFooter>
+          <WithNavigationFooter>
+            <Boxes />
+            {children}
+          </WithNavigationFooter>
         </Provider>
       </body>
     </html>

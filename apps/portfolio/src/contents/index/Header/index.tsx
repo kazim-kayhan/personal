@@ -13,6 +13,7 @@ function Header() {
         "lg:pb-28 lg:pt-52",
       )}
     >
+      {/* Meaty part - Meteor effect */}
       <div className={cn("content-wrapper")}>
         <div className={cn("relative")}>
           <div className={cn("relative z-10")}>

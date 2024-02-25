@@ -3,70 +3,59 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 model ContentMeta {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-
-  type      ContentType
+  id        String       @id @default(uuid())
+  type      String       // Changed from ContentType enum to String
   title     String
-  slug      String     @unique
+  slug      String       @unique
   views     View[]
   shares    Share[]
   reactions Reaction[]
-  createdAt DateTime   @default(now())
+  createdAt DateTime     @default(now())
+
+  @@map("ContentMeta")
 }
 
-enum ContentType {
-  PAGE
-  POST
-  PROJECT
-}
+// Removed ContentType enum definition
 
 model View {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-
-  createdAt DateTime @default(now())
+  id        String      @id @default(uuid())
+  createdAt DateTime    @default(now())
   sessionId String
-
-  contentId String      @db.ObjectId
+  contentId String
   content   ContentMeta @relation(fields: [contentId], references: [id], onDelete: Cascade)
+
+  @@map("View")
 }
 
 model Share {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-
-  type      ShareType? @default(OTHERS)
-  createdAt DateTime   @default(now())
+  id        String      @id @default(uuid())
+  type      String?     // Changed from ShareType enum to String, default can be handled in code
+  createdAt DateTime    @default(now())
   sessionId String
-
-  contentId String      @db.ObjectId
+  contentId String
   content   ContentMeta @relation(fields: [contentId], references: [id], onDelete: Cascade)
+
+  @@map("Share")
 }
 
-enum ShareType {
-  TWITTER
-  CLIPBOARD
-  OTHERS
-}
+// Removed ShareType enum definition
 
 model Reaction {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-
-  count     Int?          @default(1)
+  id        String      @id @default(uuid())
+  count     Int?        @default(1)
   section   String?
-  type      ReactionType? @default(CLAPPING)
-  createdAt DateTime      @default(now())
+  type      String?     // Changed from ReactionType enum to String, default can be handled in code
+  createdAt DateTime    @default(now())
   sessionId String
-
-  contentId String      @db.ObjectId
+  contentId String
   content   ContentMeta @relation(fields: [contentId], references: [id], onDelete: Cascade)
+
+  @@map("Reaction")
 }
 
-enum ReactionType {
-  CLAPPING
-  THINKING
-  AMAZED
-}
+// Removed ReactionType enum definition

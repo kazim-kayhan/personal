@@ -3,7 +3,7 @@ import SectionTitle from "../../components/sections/SectionTitle";
 
 function PrettyOptimized() {
   return (
-    <header className={cn("mb-8")}>
+    <header className={cn("mb-8", "relative")}>
       <SectionTitle
         title="Comprehensible and Optimized Code."
         caption="Pretty & Optimized"
