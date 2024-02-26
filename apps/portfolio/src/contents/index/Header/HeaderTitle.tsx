@@ -72,9 +72,9 @@ function HeaderTitle() {
         >
           I&apos;m{" "}
           <strong className={cn("text-accent-600", "dark:text-accent-500")}>
-            Top
+            Kazim
           </strong>{" "}
-          Front.dev,{" "}
+          Kayhan,{" "}
         </m.span>
         <m.h1
           className={cn(
@@ -95,8 +95,8 @@ function HeaderTitle() {
           >
             Front-End Developer
           </strong>{" "}
-          who loves intuitive,{" "}
-          <span className={cn("block")}>clean and modern UI design.</span>
+          who loves transforming letters and symbols into
+          <span className={cn("block")}>beautiful user experiences.</span>
         </m.h1>
       </span>
     </div>

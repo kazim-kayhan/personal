@@ -27,7 +27,7 @@ function ButtonContactMe() {
     <Link
       href="/work/contact"
       className={cn(
-        "button animate-bounce button--solid min-w-[128px]",
+        "button animate-pulse button--solid min-w-[128px]",
         "md:button--big",
       )}
     >

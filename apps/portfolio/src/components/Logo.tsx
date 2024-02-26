@@ -26,12 +26,6 @@ function Logo({ active = false }: LogoProps) {
           )}
         />
       </div>
-      <div className={cn("-mt-1 hidden text-xl", "sm:block")}>
-        <span className={cn("text-slate-900", "dark:text-slate-200")}>top</span>
-        <span className={cn("text-accent-600", "dark:text-accent-500")}>
-          front
-        </span>
-      </div>
     </div>
   );
 }
