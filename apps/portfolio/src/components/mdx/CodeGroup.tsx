@@ -8,19 +8,19 @@ import { Pre } from "../mdx/custom-components/Pre";
 
 import { formatLang } from "../../helpers/mdx";
 
-import { cn } from "@repo/ui/lib/utils";
 import type { PropsWithChildren, ReactElement } from "react";
 import type { PreProps } from "../mdx/custom-components/Pre";
+import { mc } from "merge-class";
 
 function CodeGroupFile({ children = null }: PropsWithChildren) {
   return (
-    <Tab className={cn("mdx-code-group__file")}>
+    <Tab className={mc("mdx-code-group__file")}>
       {({ selected }) => (
-        <div className={cn("mdx-code-group__file-content")}>
+        <div className={mc("mdx-code-group__file-content")}>
           {selected && (
             <>
-              <div className={cn("mdx-code-group__file-bl")} />
-              <div className={cn("mdx-code-group__file-br")} />
+              <div className={mc("mdx-code-group__file-bl")} />
+              <div className={mc("mdx-code-group__file-br")} />
             </>
           )}
           {children}
@@ -31,7 +31,7 @@ function CodeGroupFile({ children = null }: PropsWithChildren) {
 }
 
 function CodeGroupTab({ children = null }: PropsWithChildren) {
-  return <Tab className={cn("mdx-code-group__tab")}>{children}</Tab>;
+  return <Tab className={mc("mdx-code-group__tab")}>{children}</Tab>;
 }
 
 interface CodeGroupProps {
@@ -63,13 +63,13 @@ function CodeGroup({ variant = "tab", children }: CodeGroupProps) {
 
   return (
     <div
-      className={cn("mdx-code-group", [
+      className={mc("mdx-code-group", [
         variant === "tab" ? "mdx-code-group--tab" : "mdx-code-group--files",
       ])}
     >
       <Tab.Group manual>
-        <div className={cn("mdx-code-group__header-wrapper")}>
-          <Tab.List className={cn("mdx-code-group__header")}>
+        <div className={mc("mdx-code-group__header-wrapper")}>
+          <Tab.List className={mc("mdx-code-group__header")}>
             {tab.map(({ title, icon }, idx) =>
               variant === "tab" ? (
                 <CodeGroupTab key={idx}>
@@ -85,7 +85,7 @@ function CodeGroup({ variant = "tab", children }: CodeGroupProps) {
             )}
           </Tab.List>
         </div>
-        <Tab.Panels className={cn("mdx-code-group__content")}>
+        <Tab.Panels className={mc("mdx-code-group__content")}>
           {tab.map(({ panel }, idx) => (
             <Tab.Panel key={idx}>{panel}</Tab.Panel>
           ))}

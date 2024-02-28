@@ -1,7 +1,9 @@
-import { memo, useEffect, useState } from 'react';
-import { createPortal } from 'react-dom';
+"use client";
 
-import type { PropsWithChildren } from 'react';
+import { memo, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+
+import type { PropsWithChildren } from "react";
 
 interface PortalProps {
   selector: string;

@@ -1,10 +1,10 @@
-import "@repo/ui/globals.css";
-import { cn } from "@repo/ui/lib/utils";
+import { mc } from "merge-class";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Boxes } from "../src/components/background-boxes";
 import WithNavigationFooter from "../src/layouts/WithNavigationFooter";
 import Provider from "../src/providers";
+
+import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,16 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn(
+        className={mc(
           "min-h-screen bg-background text-foreground font-sans antialiased container",
           inter.className,
         )}
       >
         <Provider>
-          <WithNavigationFooter>
-            <Boxes />
-            {children}
-          </WithNavigationFooter>
+          <WithNavigationFooter>{children}</WithNavigationFooter>
         </Provider>
       </body>
     </html>

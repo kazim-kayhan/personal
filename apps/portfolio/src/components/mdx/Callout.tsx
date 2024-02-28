@@ -1,4 +1,4 @@
-import { cn } from "@repo/ui/lib/utils";
+import { mc } from "merge-class";
 import { ErrorIcon, InfoIcon, NoteIcon, WarningIcon } from "../Icons";
 
 import type { PropsWithChildren, ReactElement } from "react";
@@ -54,12 +54,12 @@ function Callout({
   }
 
   return (
-    <div className={cn("mdx-callout", data.modifier)}>
-      <div className={cn("mdx-callout__header")}>
+    <div className={mc("mdx-callout", data.modifier)}>
+      <div className={mc("mdx-callout__header")}>
         {data.icon}
         {data.title}
       </div>
-      <div className={cn("mdx-callout__content")}>{children}</div>
+      <div className={mc("mdx-callout__content")}>{children}</div>
     </div>
   );
 }

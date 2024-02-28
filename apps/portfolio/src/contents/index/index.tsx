@@ -1,4 +1,4 @@
-import { cn } from "@repo/ui/lib/utils";
+import { mc } from "merge-class";
 import { CodeIcon, HeartIcon, SparklesIcon } from "../../components/Icons";
 
 import CleanIntuitive from "./CleanIntuitive";
@@ -10,17 +10,17 @@ import Quote from "./Quote";
 
 function FeaturedCardSection() {
   return (
-    <div className={cn("content-wrapper")}>
-      <div className={cn("flex flex-col gap-4", "lg:flex-row lg:gap-8")}>
+    <div className={mc("content-wrapper")}>
+      <div className={mc("flex flex-col gap-4", "lg:flex-row lg:gap-8")}>
         <FeaturedCard
           icon={
             <div
-              className={cn(
+              className={mc(
                 "rounded-full bg-amber-300 p-3.5",
                 "dark:bg-amber-900",
               )}
             >
-              <SparklesIcon className={cn("h-5 w-5 text-white")} />
+              <SparklesIcon className={mc("h-5 w-5 text-white")} />
             </div>
           }
           title="Clean & Intuitive"
@@ -29,12 +29,12 @@ function FeaturedCardSection() {
         <FeaturedCard
           icon={
             <div
-              className={cn(
+              className={mc(
                 "rounded-full bg-pink-300 p-3.5",
                 "dark:bg-pink-900",
               )}
             >
-              <HeartIcon className={cn("h-5 w-5 text-white")} />
+              <HeartIcon className={mc("h-5 w-5 text-white")} />
             </div>
           }
           title="Detail Oriented"
@@ -43,9 +43,9 @@ function FeaturedCardSection() {
         <FeaturedCard
           icon={
             <div
-              className={cn("rounded-full bg-sky-300 p-3.5", "dark:bg-sky-900")}
+              className={mc("rounded-full bg-sky-300 p-3.5", "dark:bg-sky-900")}
             >
-              <CodeIcon className={cn("h-5 w-5 text-white")} />
+              <CodeIcon className={mc("h-5 w-5 text-white")} />
             </div>
           }
           title="Pretty & Optimized"
@@ -58,8 +58,8 @@ function FeaturedCardSection() {
 
 function QuoteSection() {
   return (
-    <div className={cn("content-wrapper")}>
-      <div className={cn("flex items-center justify-center py-8")}>
+    <div className={mc("content-wrapper")}>
+      <div className={mc("flex items-center justify-center py-8")}>
         <Quote />
       </div>
     </div>
@@ -70,19 +70,19 @@ function IndexContents() {
   return (
     <>
       <Header />
-      <div className={cn("hidden", "lg:-mt-16 lg:mb-24 lg:block")}>
+      <div className={mc("hidden", "lg:-mt-16 lg:mb-24 lg:block")}>
         <FeaturedCardSection />
       </div>
-      <div className={cn("-mt-12 mb-12", "md:mt-0 md:mb-24")}>
+      <div className={mc("-mt-12 mb-12", "md:mt-0 md:mb-24")}>
         <QuoteSection />
       </div>
-      <section className={cn("mb-12", "lg:mb-24")}>
+      <section className={mc("mb-12", "lg:mb-24")}>
         <CleanIntuitive />
       </section>
-      <section className={cn("mb-12", "lg:mb-24")}>
+      <section className={mc("mb-12", "lg:mb-24")}>
         <DetailOriented />
       </section>
-      <section className={cn("mb-12", "lg:mb-24")}>
+      <section className={mc("mb-12", "lg:mb-24")}>
         <PrettyOptimized />
       </section>
     </>

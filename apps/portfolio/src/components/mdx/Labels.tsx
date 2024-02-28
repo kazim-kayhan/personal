@@ -1,4 +1,4 @@
-import { cn } from "@repo/ui/lib/utils";
+import { mc } from "merge-class";
 import type { PropsWithChildren, ReactElement } from "react";
 
 interface LabelProps {
@@ -12,10 +12,10 @@ export function Label({
   const percentage = Math.min(100, Math.max(0, indicator));
 
   return (
-    <span className={cn("label")}>
+    <span className={mc("label")}>
       {children}
       <span
-        className={cn("label__indicator")}
+        className={mc("label__indicator")}
         style={{ width: `${percentage}%` }}
       />
     </span>
@@ -30,12 +30,12 @@ interface LabelsProps {
 function Labels({ title, children }: LabelsProps) {
   return (
     <div
-      className={cn("flex flex-col items-start gap-2", "sm:flex-row sm:gap-6")}
+      className={mc("flex flex-col items-start gap-2", "sm:flex-row sm:gap-6")}
     >
-      <div className={cn("w-48", "sm:gap-4 sm:text-right")}>
-        <strong className={cn("text-sm")}>{title}</strong>
+      <div className={mc("w-48", "sm:gap-4 sm:text-right")}>
+        <strong className={mc("text-sm")}>{title}</strong>
       </div>
-      <div className={cn("flex flex-1 flex-wrap gap-2")}>{children}</div>
+      <div className={mc("flex flex-1 flex-wrap gap-2")}>{children}</div>
     </div>
   );
 }

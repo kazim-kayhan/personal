@@ -1,12 +1,12 @@
 "use client";
 
-import { cn } from "@repo/ui/lib/utils";
+import { mc } from "merge-class";
 import { ToastBar, Toaster } from "react-hot-toast";
 
 function Toast() {
   return (
     <div
-      className={cn(
+      className={mc(
         "pointer-events-none fixed inset-8 z-[9999] overflow-hidden",
       )}
     >

@@ -3,8 +3,8 @@ import { PropsWithChildren } from "react";
 
 import { ExternalLink } from "../Icons";
 
-import { cn } from "@repo/ui/lib/utils";
 import type { LinkProps } from "next/link";
+import { mc } from "merge-class";
 
 type QuickViewProps = LinkProps & PropsWithChildren;
 
@@ -27,26 +27,26 @@ export function QuickView({ href, children }: QuickViewProps) {
 
   return (
     <>
-      <span className={cn("hidden items-center gap-2", "xl:inline-flex")}>
+      <span className={mc("hidden items-center gap-2", "xl:inline-flex")}>
         {/* only show for large devices */}
-        <Link href={href} className={cn("link")}>
+        <Link href={href} className={mc("link")}>
           {children}
         </Link>
         <button
           type="button"
           onClick={handleQuickView}
-          className={cn(
+          className={mc(
             "bg-accent-600/[0.08] text-accent-600 inline-flex h-6 items-center gap-1 rounded-full px-2 text-[13px] font-medium",
             "dark:text-accent-400 dark:dark:bg-accent-400/10 dark:font-normal",
           )}
         >
           Quick View
-          <ExternalLink className={cn("h-3.5 w-3.5")} />
+          <ExternalLink className={mc("h-3.5 w-3.5")} />
         </button>
       </span>
 
       {/* show basic link on small devices */}
-      <Link href={href} className={cn("link", "xl:hidden")}>
+      <Link href={href} className={mc("link", "xl:hidden")}>
         {children}
       </Link>
     </>

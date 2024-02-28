@@ -10,8 +10,8 @@ import { XIcon } from "./Icons";
 import NewPosts from "./NewPosts";
 import TipShortcuts from "./TipShortcuts";
 
-import { cn } from "@repo/ui/lib/utils";
 import useGlobal from "../hooks/useGlobal";
+import { mc } from "merge-class";
 
 const animation = {
   hide: { opacity: 0 },
@@ -28,22 +28,22 @@ function QuickAccess() {
       initialFocus={closeButtonRef}
       open={isQuickAccessOpen}
       onClose={() => setQuickAccessOpen(false)}
-      className={cn("relative z-[1001]")}
+      className={mc("relative z-[1001]")}
     >
       <m.div
         variants={animation}
         initial="hide"
         animate="show"
-        className={cn(
+        className={mc(
           "fixed inset-0 z-[-1] bg-slate-200/[.95]",
           "dark:bg-slate-900/[.98]",
         )}
         aria-hidden={!isQuickAccessOpen}
       />
-      <div className={cn("fixed inset-0")}>
+      <div className={mc("fixed inset-0")}>
         <Dialog.Panel>
           <div
-            className={cn(
+            className={mc(
               "pointer-events-none absolute inset-x-4 top-8 flex justify-end",
               "sm:inset-x-8",
             )}
@@ -51,7 +51,7 @@ function QuickAccess() {
             <button
               ref={closeButtonRef}
               type="button"
-              className={cn(
+              className={mc(
                 "pointer-events-auto ml-1 flex h-9 w-9 items-center justify-center rounded-xl bg-slate-300/50 text-slate-800",
                 "hover:bg-slate-300/70 sm:ml-0",
                 "dark:bg-slate-800/50 dark:text-slate-100 dark:hover:bg-slate-700/50",
@@ -60,27 +60,27 @@ function QuickAccess() {
               title="Close Quick Access"
               onClick={() => setQuickAccessOpen(false)}
             >
-              <XIcon className={cn("h-5 w-5")} />
+              <XIcon className={mc("h-5 w-5")} />
             </button>
           </div>
           <div
             data-accent="violet"
-            className={cn(
+            className={mc(
               "fixed left-2 right-2 bottom-0 top-20 flex flex-col gap-6",
               "sm:left-auto sm:right-6 sm:top-24 sm:w-[320px]",
             )}
           >
-            <div className={cn("")}>
+            <div className={mc("")}>
               <ActionCenter />
             </div>
-            <div className={cn("")}>
+            <div className={mc("")}>
               <NewPosts onItemClick={() => setQuickAccessOpen(false)} />
             </div>
-            <div className={cn("flex flex-1 flex-col")}>
+            <div className={mc("flex flex-1 flex-col")}>
               <Activity onItemClick={() => setQuickAccessOpen(false)} />
             </div>
             <div
-              className={cn(
+              className={mc(
                 "fixed left-8 bottom-10 hidden w-[320px]",
                 "md:block",
               )}

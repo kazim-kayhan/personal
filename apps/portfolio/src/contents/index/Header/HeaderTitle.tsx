@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@repo/ui/lib/utils";
 import { m, useAnimationControls } from "framer-motion";
+import { mc } from "merge-class";
 import Image from "next/image";
 
 const animation = {
@@ -18,7 +18,7 @@ function HeaderTitle() {
   return (
     <div>
       <m.div
-        className={cn(
+        className={mc(
           "mb-1 flex items-center gap-1 text-2xl text-slate-600",
           "md:mb-0 md:gap-2 md:text-4xl",
           "dark:text-slate-400",
@@ -44,7 +44,7 @@ function HeaderTitle() {
           }}
         >
           <Image
-            className={cn("w-7 md:w-10")}
+            className={mc("w-7 md:w-10")}
             alt="Love-you Gesture"
             src="/assets/emojis/love-you-gesture.png"
             width={48}
@@ -60,9 +60,9 @@ function HeaderTitle() {
           />
         </m.div>
       </m.div>
-      <span className={cn("text-slate-700", "dark:text-slate-300")}>
+      <span className={mc("text-slate-700", "dark:text-slate-300")}>
         <m.span
-          className={cn(
+          className={mc(
             "mb-4 block text-[2.5rem] font-[1000] leading-none",
             "md:mb-6 md:text-7xl",
           )}
@@ -71,13 +71,13 @@ function HeaderTitle() {
           transition={{ delay: 0.2 }}
         >
           I&apos;m{" "}
-          <strong className={cn("text-accent-600", "dark:text-accent-500")}>
+          <strong className={mc("text-accent-600", "dark:text-accent-500")}>
             Kazim
           </strong>{" "}
           Kayhan,{" "}
         </m.span>
         <m.h1
-          className={cn(
+          className={mc(
             "block text-base text-slate-600",
             "md:text-xl",
             "dark:text-slate-400",
@@ -86,9 +86,9 @@ function HeaderTitle() {
           animate={animation.show}
           transition={{ delay: 0.3 }}
         >
-          <span className={cn("lowercase")}>A</span>{" "}
+          <span className={mc("lowercase")}>A</span>{" "}
           <strong
-            className={cn(
+            className={mc(
               "font-bold lowercase text-slate-700",
               "dark:text-slate-300",
             )}
@@ -96,7 +96,7 @@ function HeaderTitle() {
             Front-End Developer
           </strong>{" "}
           who loves transforming letters and symbols into
-          <span className={cn("block")}>beautiful user experiences.</span>
+          <span className={mc("block")}>beautiful user experiences.</span>
         </m.h1>
       </span>
     </div>

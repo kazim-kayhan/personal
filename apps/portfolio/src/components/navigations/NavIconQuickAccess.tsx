@@ -1,8 +1,8 @@
-import { cn } from "@repo/ui/lib/utils";
 import { QuickAccessIcon } from "../Icons";
 import Kbd from "../Kbd";
 
 import useGlobal from "../../hooks/useGlobal";
+import { mc } from "merge-class";
 
 function NavIconQuickAccess() {
   const { setQuickAccessOpen } = useGlobal();
@@ -10,7 +10,7 @@ function NavIconQuickAccess() {
   return (
     <button
       type="button"
-      className={cn(
+      className={mc(
         "ml-1 flex h-9 w-9 items-center justify-center gap-2 rounded-xl bg-slate-300/50 text-slate-800",
         "xl:w-auto xl:px-3",
         "hover:bg-slate-300/70 sm:ml-0",
@@ -22,9 +22,9 @@ function NavIconQuickAccess() {
         setQuickAccessOpen(true);
       }}
     >
-      <QuickAccessIcon className={cn("h-5 w-5")} />
+      <QuickAccessIcon className={mc("h-5 w-5")} />
       <div
-        className={cn(
+        className={mc(
           "hidden items-center gap-2 text-xs font-bold",
           "xl:flex",
           "dark:font-normal",

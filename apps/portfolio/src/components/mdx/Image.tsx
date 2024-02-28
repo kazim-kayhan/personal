@@ -2,8 +2,8 @@
 import NextImage from "next/image";
 import { useState } from "react";
 
-import { cn } from "@repo/ui/lib/utils";
 import type { ImageProps as NextImageProps } from "next/image";
+import { mc } from "merge-class";
 
 export type ImageProps = NextImageProps & {
   immersive?: boolean;
@@ -18,11 +18,11 @@ export default function Image({
   const [image, setImage] = useState<string>("");
 
   return (
-    <div className={cn("mdx-image relative")}>
+    <div className={mc("mdx-image relative")}>
       {immersive && image ? (
         <div
           style={{ backgroundImage: `url(${image})` }}
-          className={cn(
+          className={mc(
             "absolute -inset-8 z-[-1] rounded-[20%] bg-[length:180%_180%] bg-center opacity-25 blur-2xl",
             "hidden", // disable immersive on light mode
             "dark:block",
@@ -31,7 +31,7 @@ export default function Image({
       ) : null}
       <NextImage
         src={src}
-        className={cn(
+        className={mc(
           "border-divider-light rounded-lg border",
           "dark:border-divider-dark",
           className,

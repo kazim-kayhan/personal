@@ -1,4 +1,4 @@
-import { cn } from "@repo/ui/lib/utils";
+import { mc } from "merge-class";
 
 interface LogoProps {
   active?: boolean;
@@ -6,9 +6,9 @@ interface LogoProps {
 
 function Logo({ active = false }: LogoProps) {
   return (
-    <div className={cn("flex items-center gap-1.5 font-[1000] leading-none")}>
+    <div className={mc("flex items-center gap-1.5 font-[1000] leading-none")}>
       <div
-        className={cn(
+        className={mc(
           "border-box flex h-8 w-8 items-center justify-center rounded-xl border-2",
           "sm:h-6 sm:w-6 sm:rounded-lg",
           [
@@ -19,7 +19,7 @@ function Logo({ active = false }: LogoProps) {
         )}
       >
         <div
-          className={cn(
+          className={mc(
             "h-3.5 w-0.5 rotate-12 rounded-full",
             "sm:h-3 sm:w-0.5",
             [active ? "bg-white" : "bg-accent-600 dark:bg-accent-400"],

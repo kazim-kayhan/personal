@@ -1,4 +1,4 @@
-import { cn } from "@repo/ui/lib/utils";
+import { mc } from "merge-class";
 import type { ReactElement } from "react";
 
 interface NavIconProps {
@@ -12,7 +12,7 @@ function NavIcon({ href, icon, title, label = "" }: NavIconProps) {
   return (
     <a
       href={href}
-      className={cn(
+      className={mc(
         "flex items-center justify-center rounded-xl",
         "hover:bg-slate-300/50",
         "dark:hover:bg-slate-800/50",
@@ -31,13 +31,13 @@ function NavIcon({ href, icon, title, label = "" }: NavIconProps) {
       rel="noreferrer nofollow"
     >
       <span
-        className={cn("flex h-9 w-9 items-center justify-center rounded-xl")}
+        className={mc("flex h-9 w-9 items-center justify-center rounded-xl")}
       >
         {icon}
       </span>
       {label && (
         <span
-          className={cn(
+          className={mc(
             "hidden text-xs font-bold",
             "sm:block",
             "dark:font-semibold",

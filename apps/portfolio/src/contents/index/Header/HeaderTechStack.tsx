@@ -2,7 +2,6 @@
 
 import { m } from "framer-motion";
 
-import { cn } from "@repo/ui/lib/utils";
 import {
   FigmaIcon,
   FramerMotionIcon,
@@ -12,6 +11,7 @@ import {
   TypeScriptIcon,
   VSCodeIcon,
 } from "../../../components/Icons";
+import { mc } from "merge-class";
 
 const animation = {
   hide: { x: -8, opacity: 0 },
@@ -25,7 +25,7 @@ function HeaderTechStack() {
   return (
     <div>
       <m.p
-        className={cn("mb-2.5 text-sm text-slate-600", "dark:text-slate-400")}
+        className={mc("mb-2.5 text-sm text-slate-600", "dark:text-slate-400")}
         initial={animation.hide}
         animate={animation.show}
         transition={{ delay: 0.6 }}
@@ -33,7 +33,7 @@ function HeaderTechStack() {
         current favorite tech stack/tools:
       </m.p>
       <m.ul
-        className={cn(
+        className={mc(
           "flex items-center gap-3.5 text-slate-500",
           "dark:text-slate-500",
         )}
@@ -42,45 +42,45 @@ function HeaderTechStack() {
         transition={{ delayChildren: 0.6, staggerChildren: 0.025 }}
       >
         <m.li variants={animation}>
-          <div className={cn("transition duration-200 hover:text-[#3178C6]")}>
-            <TypeScriptIcon className={cn("h-6 w-6")} />
+          <div className={mc("transition duration-200 hover:text-[#3178C6]")}>
+            <TypeScriptIcon className={mc("h-6 w-6")} />
           </div>
         </m.li>
         <m.li variants={animation}>
-          <div className={cn("transition duration-200 hover:text-[#61DAFB]")}>
-            <ReactIcon className={cn("h-6 w-6")} />
+          <div className={mc("transition duration-200 hover:text-[#61DAFB]")}>
+            <ReactIcon className={mc("h-6 w-6")} />
           </div>
         </m.li>
         <m.li variants={animation}>
-          <div className={cn("transition duration-200 hover:text-[#06B6D4]")}>
-            <TailwindCssIcon className={cn("h-6 w-6")} />
+          <div className={mc("transition duration-200 hover:text-[#06B6D4]")}>
+            <TailwindCssIcon className={mc("h-6 w-6")} />
           </div>
         </m.li>
         <m.li variants={animation}>
-          <div className={cn("transition duration-200 hover:text-[#0055FF]")}>
-            <FramerMotionIcon className={cn("h-6 w-6")} />
+          <div className={mc("transition duration-200 hover:text-[#0055FF]")}>
+            <FramerMotionIcon className={mc("h-6 w-6")} />
           </div>
         </m.li>
         <m.li variants={animation}>
           <div
-            className={cn(
+            className={mc(
               "transition duration-200 hover:text-[#000000] dark:hover:text-[#FFFFFF]",
             )}
           >
-            <NextJsIcon className={cn("h-6 w-6")} />
+            <NextJsIcon className={mc("h-6 w-6")} />
           </div>
         </m.li>
         <m.li variants={animation}>
-          <div className={cn("h-3 w-[1px] bg-slate-300 dark:bg-slate-700")} />
+          <div className={mc("h-3 w-[1px] bg-slate-300 dark:bg-slate-700")} />
         </m.li>
         <m.li variants={animation}>
-          <div className={cn("transition duration-200 hover:text-[#007ACC]")}>
-            <VSCodeIcon className={cn("h-6 w-6")} />
+          <div className={mc("transition duration-200 hover:text-[#007ACC]")}>
+            <VSCodeIcon className={mc("h-6 w-6")} />
           </div>
         </m.li>
         <m.li variants={animation}>
-          <div className={cn("transition duration-200 hover:text-[#F24E1E]")}>
-            <FigmaIcon className={cn("h-6 w-6")} />
+          <div className={mc("transition duration-200 hover:text-[#F24E1E]")}>
+            <FigmaIcon className={mc("h-6 w-6")} />
           </div>
         </m.li>
       </m.ul>

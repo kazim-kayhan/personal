@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@repo/ui/lib/utils";
 import { m } from "framer-motion";
+import { mc } from "merge-class";
 import React from "react";
 
 export const LampContainer = ({
@@ -13,7 +13,7 @@ export const LampContainer = ({
 }) => {
   return (
     <div
-      className={cn(
+      className={mc(
         "relative flex flex-col items-center justify-center overflow-hidden bg-slate-950 w-full rounded-3xl z-0",
         className,
       )}

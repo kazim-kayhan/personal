@@ -1,4 +1,4 @@
-import { cn } from "@repo/ui/lib/utils";
+import { mc } from "merge-class";
 import Link from "next/link";
 
 import type { ReactNode } from "react";
@@ -11,7 +11,7 @@ export type NavLinkProps = {
 
 function NavLink({ title, href, icon = null }: NavLinkProps) {
   return (
-    <Link href={href} className={cn("nav-link")}>
+    <Link href={href} className={mc("nav-link")}>
       {title}
       {icon}
     </Link>

@@ -1,4 +1,4 @@
-import { cn } from "@repo/ui/lib/utils";
+import { mc } from "merge-class";
 import type { ReactNode } from "react";
 
 interface SectionButtonProps {
@@ -19,7 +19,7 @@ export function SectionButton({
   return (
     <button
       type="button"
-      className={cn(
+      className={mc(
         "flex flex-1 items-center gap-4 rounded-2xl border-2 bg-white px-4 py-4 text-left",
         "dark:bg-slate-900",
         active
@@ -30,7 +30,7 @@ export function SectionButton({
     >
       {icon && (
         <span
-          className={cn(
+          className={mc(
             "hidden w-24 shrink-0 justify-center text-center text-7xl font-black",
             "xl:flex",
             active
@@ -41,9 +41,9 @@ export function SectionButton({
           {icon}
         </span>
       )}
-      <span className={cn("flex-1")}>
+      <span className={mc("flex-1")}>
         <span
-          className={cn(
+          className={mc(
             "block font-bold",
             active
               ? ["text-accent-600", "dark:text-accent-400"]
@@ -54,7 +54,7 @@ export function SectionButton({
         </span>
         {description && (
           <span
-            className={cn(
+            className={mc(
               "mt-1 block text-sm text-slate-600",
               "dark:text-slate-400",
             )}
@@ -76,16 +76,16 @@ export function SectionButtonSmall({
   return (
     <button
       type="button"
-      className={cn("flex flex-col items-center rounded-xl p-2 text-sm", [
+      className={mc("flex flex-col items-center rounded-xl p-2 text-sm", [
         active
           ? ["text-accent-600", "dark:text-accent-400"]
           : ["text-slate-400", "dark:text-slate-600"],
       ])}
       onClick={onClick}
     >
-      <span className={cn("text-4xl font-black")}>{icon}</span>
+      <span className={mc("text-4xl font-black")}>{icon}</span>
       <span
-        className={cn(
+        className={mc(
           "font-medium",
           active
             ? ["text-accent-600", "dark:text-accent-400"]

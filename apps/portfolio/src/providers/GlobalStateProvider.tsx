@@ -1,6 +1,7 @@
 "use client";
 
-import { createContext, useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
+import { createContext, useEffect, useMemo, useRef, useState } from "react";
 
 export interface GlobalContext {
   isQuickAccessOpen: boolean;
@@ -14,6 +15,18 @@ const DEFAULT_VALUE: GlobalContext = {
 
 export const GlobalStateContext = createContext<GlobalContext>(DEFAULT_VALUE);
 
+function usePrevious<T>(value: T) {
+  let ref = useRef<T>();
+
+  useEffect(() => {
+    ref.current = value;
+  }, [value]);
+
+  return ref.current;
+}
+
+export const AppContext = createContext<{ previousPathname?: string }>({});
+
 function GlobalStateProvider({ children }: { children: React.ReactNode }) {
   const [isQuickAccessOpen, setQuickAccessOpen] = useState<boolean>(
     DEFAULT_VALUE.isQuickAccessOpen,
@@ -23,10 +36,14 @@ function GlobalStateProvider({ children }: { children: React.ReactNode }) {
     () => ({ isQuickAccessOpen, setQuickAccessOpen }),
     [isQuickAccessOpen],
   );
+  let pathname = usePathname();
+  let previousPathname = usePrevious(pathname);
 
   return (
     <GlobalStateContext.Provider value={value}>
-      {children}
+      <AppContext.Provider value={{ previousPathname }}>
+        {children}
+      </AppContext.Provider>
     </GlobalStateContext.Provider>
   );
 }

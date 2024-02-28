@@ -7,9 +7,9 @@ import { forwardRef } from "react";
 
 import { ChevronRightIcon } from "../Icons";
 
-import { cn } from "@repo/ui/lib/utils";
 import type { HTMLAttributes, Ref } from "react";
 import type { UrlObject } from "url";
+import { mc } from "merge-class";
 
 const animation = {
   hide: { opacity: 0, y: -16 },
@@ -47,10 +47,10 @@ function NavLinkDropdown({ title, items }: NavLinkDropdownProps) {
       <Menu>
         {({ open }: { open: boolean }) => (
           <>
-            <Menu.Button className={cn("nav-link nav-link--label ml-2")}>
+            <Menu.Button className={mc("nav-link nav-link--label ml-2")}>
               {title}
               <ChevronRightIcon
-                className={cn("h-3 w-3 rotate-90", [open && "-rotate-90"])}
+                className={mc("h-3 w-3 rotate-90", [open && "-rotate-90"])}
               />
             </Menu.Button>
             {open && (
@@ -60,7 +60,7 @@ function NavLinkDropdown({ title, items }: NavLinkDropdownProps) {
                 variants={animation}
                 initial="hide"
                 animate="show"
-                className={cn(
+                className={mc(
                   "border-divider-light absolute top-11 flex w-40 flex-col rounded-2xl border bg-white/70 p-2 backdrop-blur",
                   "dark:border-divider-dark dark:bg-slate-900/80",
                 )}
@@ -70,7 +70,7 @@ function NavLinkDropdown({ title, items }: NavLinkDropdownProps) {
                     {({ active }: { active: boolean }) => (
                       <LinkRef
                         href={item.href}
-                        className={cn("nav-link h-8 text-xs", [
+                        className={mc("nav-link h-8 text-xs", [
                           active && "nav-link--focus",
                         ])}
                       >

@@ -5,8 +5,8 @@ import { DarkIcon, EyeIcon, EyeSlash, LightIcon } from "./Icons";
 
 import useFocusMode from "../hooks/useFocusMode";
 
-import { cn } from "@repo/ui/lib/utils";
 import type { PropsWithChildren, ReactElement } from "react";
+import { mc } from "merge-class";
 
 const animation = {
   hide: { y: -16, opacity: 0 },
@@ -37,15 +37,15 @@ function ActionCenterButton({
     <button
       type="button"
       onClick={onClick}
-      className={cn(
+      className={mc(
         "relative flex flex-1 flex-col justify-between overflow-hidden rounded-xl p-4 transition-colors",
         "dark:bg-[#1d263a]",
         [active ? ["bg-white", "dark:bg-slate-700"] : "bg-white/50"],
       )}
     >
-      <div className={cn("")}>{icon}</div>
+      <div className={mc("")}>{icon}</div>
       <div
-        className={cn("text-left text-[13px] font-medium", "dark:font-normal")}
+        className={mc("text-left text-[13px] font-medium", "dark:font-normal")}
       >
         {title}
       </div>
@@ -63,16 +63,16 @@ function ActionCenter() {
 
   return (
     <m.div
-      className={cn("flex flex-col gap-2")}
+      className={mc("flex flex-col gap-2")}
       initial="hide"
       animate="show"
       transition={{ staggerChildren: 0.06 }}
     >
-      <m.div className={cn("px-2 text-xl font-bold")} variants={animation}>
+      <m.div className={mc("px-2 text-xl font-bold")} variants={animation}>
         Action Center
       </m.div>
-      <div className={cn("flex flex-1 flex-col gap-8 p-2")}>
-        <m.div className={cn("flex h-24 gap-4")} variants={animation}>
+      <div className={mc("flex flex-1 flex-col gap-8 p-2")}>
+        <m.div className={mc("flex h-24 gap-4")} variants={animation}>
           <ActionCenterButton
             active={theme === "dark"}
             title={theme === "dark" ? "Dark Mode: On" : "Dark Mode: Off"}
@@ -85,7 +85,7 @@ function ActionCenter() {
                     : { rotate: [90.01, 0] }
                 }
                 transition={{ ease: "easeOut", duration: 0.8 }}
-                className={cn("absolute top-4 left-4 h-36 w-36 rounded-full")}
+                className={mc("absolute top-4 left-4 h-36 w-36 rounded-full")}
               >
                 <m.div
                   animate={
@@ -94,12 +94,12 @@ function ActionCenter() {
                       : { opacity: [0, 1], scale: [0.8, 1] }
                   }
                   transition={{ ease: "easeOut", duration: 0.8 }}
-                  className={cn("absolute top-0")}
+                  className={mc("absolute top-0")}
                 >
                   {theme === "dark" ? (
-                    <DarkIcon className={cn("h-5 w-5")} />
+                    <DarkIcon className={mc("h-5 w-5")} />
                   ) : (
-                    <LightIcon className={cn("h-5 w-5")} />
+                    <LightIcon className={mc("h-5 w-5")} />
                   )}
                 </m.div>
                 <m.div
@@ -109,12 +109,12 @@ function ActionCenter() {
                       : { opacity: [1, 0.01], scale: [1, 0.8] }
                   }
                   transition={{ ease: "easeOut", duration: 0.8 }}
-                  className={cn("absolute bottom-0")}
+                  className={mc("absolute bottom-0")}
                 >
                   {theme === "dark" ? (
-                    <LightIcon className={cn("h-5 w-5 -rotate-90")} />
+                    <LightIcon className={mc("h-5 w-5 -rotate-90")} />
                   ) : (
-                    <DarkIcon className={cn("h-5 w-5 -rotate-90")} />
+                    <DarkIcon className={mc("h-5 w-5 -rotate-90")} />
                   )}
                 </m.div>
               </m.div>
@@ -128,11 +128,11 @@ function ActionCenter() {
             active={focusMode}
             icon={
               <>
-                <div className={cn("hidden", "fm:block")}>
-                  <EyeIcon className={cn("h-5 w-5")} />
+                <div className={mc("hidden", "fm:block")}>
+                  <EyeIcon className={mc("h-5 w-5")} />
                 </div>
-                <div className={cn("fm:hidden")}>
-                  <EyeSlash className={cn("h-5 w-5")} />
+                <div className={mc("fm:hidden")}>
+                  <EyeSlash className={mc("h-5 w-5")} />
                 </div>
               </>
             }

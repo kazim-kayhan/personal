@@ -1,9 +1,9 @@
 "use client";
 
-import { cn } from "@repo/ui/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "../Logo";
+import { mc } from "merge-class";
 
 interface NavLogoProps {
   href: string;
@@ -17,7 +17,7 @@ function NavLogo({ href, title }: NavLogoProps) {
   return (
     <Link
       href={href}
-      className={cn("flex h-9 items-center gap-2 rounded-xl px-2")}
+      className={mc("flex h-9 items-center gap-2 rounded-xl px-2")}
       aria-label={title}
     >
       <Logo active={isActive} />

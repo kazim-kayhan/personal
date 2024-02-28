@@ -5,21 +5,15 @@ import useContentActivity from "../hooks/useContentActivity";
 
 import { relativeTime } from "../helpers/date";
 
-import { cn } from "@repo/ui/lib/utils";
 import type { TContentActivity, TContentActivityReaction } from "../types";
+import { mc } from "merge-class";
 
 interface ActivityItemProps {
   data: TContentActivity;
 }
 
 function ActivityItem({
-  data: {
-    activityType,
-    type,
-    contentTitle,
-    contentType,
-    ...rest
-  },
+  data: { activityType, type, contentTitle, contentType, ...rest },
 }: ActivityItemProps) {
   if (activityType === "REACTION") {
     const { count } = rest as Pick<TContentActivityReaction, "count">;
@@ -40,23 +34,23 @@ function ActivityItem({
     }
 
     return (
-      <div className={cn("flex flex-wrap items-baseline gap-x-1")}>
+      <div className={mc("flex flex-wrap items-baseline gap-x-1")}>
         <span>the</span>
         <span
-          className={cn(
+          className={mc(
             "text-accent-600 font-semibold",
             "dark:text-accent-400",
           )}
         >
           {contentTitle}
         </span>
-        <span className={cn("lowercase")}>
+        <span className={mc("lowercase")}>
           {contentType.replace("POST", "BLOG POST")}
         </span>
         <span>got new</span>
         {count !== 1 && (
           <span
-            className={cn(
+            className={mc(
               "border-divider-dark rounded-md border bg-slate-200 px-1 font-mono text-xs font-bold",
               "dark:border-divider-light dark:bg-slate-800",
             )}
@@ -70,14 +64,14 @@ function ActivityItem({
   }
 
   return (
-    <div className={cn("flex flex-wrap items-baseline gap-x-1")}>
+    <div className={mc("flex flex-wrap items-baseline gap-x-1")}>
       <span>the</span>
       <span
-        className={cn("text-accent-600 font-semibold", "dark:text-accent-400")}
+        className={mc("text-accent-600 font-semibold", "dark:text-accent-400")}
       >
         {contentTitle}
       </span>
-      <span className={cn("lowercase")}>
+      <span className={mc("lowercase")}>
         {contentType.replace("POST", "BLOG POST")}
       </span>
       <span>was shared</span>
@@ -109,7 +103,7 @@ function Activity({ onItemClick = () => {} }: ActivityProps) {
     if (isLoading) {
       return (
         <m.div
-          className={cn("text-sm text-slate-700", "dark:text-slate-400")}
+          className={mc("text-sm text-slate-700", "dark:text-slate-400")}
           variants={animation}
         >
           retrieving data..
@@ -120,7 +114,7 @@ function Activity({ onItemClick = () => {} }: ActivityProps) {
     if (Array.isArray(data) && data.length === 0) {
       return (
         <m.div
-          className={cn("text-sm text-slate-700", "dark:text-slate-400")}
+          className={mc("text-sm text-slate-700", "dark:text-slate-400")}
           variants={animation}
         >
           nothing new at the moment.
@@ -131,7 +125,7 @@ function Activity({ onItemClick = () => {} }: ActivityProps) {
     if (!Array.isArray(data)) {
       return (
         <m.div
-          className={cn("text-sm text-slate-700", "dark:text-slate-400")}
+          className={mc("text-sm text-slate-700", "dark:text-slate-400")}
           variants={animation}
         >
           an internal error occurred.
@@ -151,13 +145,13 @@ function Activity({ onItemClick = () => {} }: ActivityProps) {
             onClick={() => {
               onItemClick();
             }}
-            className={cn(
+            className={mc(
               "border-divider-light block rounded-xl border bg-white/60 p-4 text-[13px] backdrop-blur",
               "dark:border-divider-dark dark:bg-slate-900/60",
             )}
           >
             <div
-              className={cn(
+              className={mc(
                 "mb-1 flex justify-between text-xs text-slate-600",
                 "dark:text-slate-400",
               )}
@@ -180,13 +174,13 @@ function Activity({ onItemClick = () => {} }: ActivityProps) {
         delayChildren: 0.12,
         staggerChildren: 0.06,
       }}
-      className={cn("flex flex-1 flex-col gap-2")}
+      className={mc("flex flex-1 flex-col gap-2")}
     >
-      <m.div variants={animation} className={cn("px-2 text-xl font-bold")}>
+      <m.div variants={animation} className={mc("px-2 text-xl font-bold")}>
         Recent Activities
       </m.div>
       <div
-        className={cn(
+        className={mc(
           "scrollbar-hide flex flex-1 basis-0 flex-col gap-2 overflow-y-auto p-2 pb-4",
           "sm:pb-8",
         )}

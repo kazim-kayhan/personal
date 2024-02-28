@@ -3,14 +3,14 @@
 import { m } from "framer-motion";
 import Image from "next/image";
 
-import { cn } from "@repo/ui/lib/utils";
 import { BackgroundGradient } from "../../../components/background-gradient";
 import { LampContainer } from "../../../components/lamp";
+import { mc } from "merge-class";
 
 function HeaderImage() {
   return (
     <m.div
-      className={cn("mt-20")}
+      className={mc("mt-20")}
       initial={{ opacity: 0.5, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{
@@ -26,7 +26,7 @@ function HeaderImage() {
             src="/assets/images/me.png"
             width={400}
             height={533}
-            className={cn(
+            className={mc(
               "hidden max-w-sm",
               "lg:block",
               "dark:brightness-[.82]",

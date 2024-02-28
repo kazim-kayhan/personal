@@ -1,8 +1,8 @@
 "use client";
 
-import { cn } from "@repo/ui/lib/utils";
 
 import { m } from "framer-motion";
+import { mc } from "merge-class";
 
 const animation = {
   hide: { pathLength: 0.3 },
@@ -34,7 +34,7 @@ function HeaderImageAnimation({
       strokeWidth={1.5}
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={cn(
+      className={mc(
         "stroke-accent-500 h-[526px] w-[457px] opacity-60",
         "dark:opacity-40",
       )}

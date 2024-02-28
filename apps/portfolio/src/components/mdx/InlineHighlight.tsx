@@ -1,19 +1,19 @@
-import { cn } from '@repo/ui/lib/utils';
-import type { PropsWithChildren } from 'react';
+import { mc } from "merge-class";
+import type { PropsWithChildren } from "react";
 
 interface InlineHighlightProps {
-  color?: 'accent' | 'blue' | 'violet';
+  color?: "accent" | "blue" | "violet";
 }
 
 export function InlineHighlight({
-  color = 'accent',
+  color = "accent",
   children = null,
 }: PropsWithChildren<InlineHighlightProps>) {
   return (
     <span
-      className={cn('mdx-inline-highlight', [
-        color === 'blue' && 'blue',
-        color === 'violet' && 'violet',
+      className={mc("mdx-inline-highlight", [
+        color === "blue" && "blue",
+        color === "violet" && "violet",
       ])}
     >
       {children}

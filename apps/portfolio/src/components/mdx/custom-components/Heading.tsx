@@ -1,9 +1,9 @@
 import { HashtagIcon } from "../../Icons";
 
-import { cn } from "@repo/ui/lib/utils";
 import { getSlug } from "../../../helpers/mdx";
 
 import type { DetailedHTMLProps, HTMLAttributes } from "react";
+import { mc } from "merge-class";
 
 type Props = DetailedHTMLProps<
   HTMLAttributes<HTMLHeadingElement>,
@@ -18,11 +18,11 @@ export function H2({ children }: Props) {
       id={slug}
       data-ss={slug}
       data-ss-mt={96}
-      className={cn("mdx-heading mdx-heading--h2 group")}
+      className={mc("mdx-heading mdx-heading--h2 group")}
     >
       <a
         href={`#${slug}`}
-        className={cn("mdx-heading__anchor group-hover:opacity-100")}
+        className={mc("mdx-heading__anchor group-hover:opacity-100")}
         aria-labelledby={slug}
         title={`Link to ${children}`}
       >
@@ -41,11 +41,11 @@ export function H3({ children }: Props) {
       id={slug}
       data-ss={slug}
       data-ss-mt={96}
-      className={cn("mdx-heading mdx-heading--h3 group")}
+      className={mc("mdx-heading mdx-heading--h3 group")}
     >
       <a
         href={`#${slug}`}
-        className={cn("mdx-heading__anchor group-hover:opacity-100")}
+        className={mc("mdx-heading__anchor group-hover:opacity-100")}
         aria-labelledby={slug}
       >
         <HashtagIcon />

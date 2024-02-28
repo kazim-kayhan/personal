@@ -1,7 +1,7 @@
 import { PropsWithChildren, useRef, useState } from "react";
 
-import { cn } from "@repo/ui/lib/utils";
 import { ClipboardIcon } from "../Icons";
+import { mc } from "merge-class";
 
 interface CodeFooterProps {
   lines?: number;
@@ -15,19 +15,19 @@ function CodeFooter({
   selected = "",
 }: CodeFooterProps) {
   return (
-    <div className={cn("mdx-code__footer")}>
+    <div className={mc("mdx-code__footer")}>
       {selected && (
-        <div className={cn("mdx-code__footer-item")}>Selected: {selected}</div>
+        <div className={mc("mdx-code__footer-item")}>Selected: {selected}</div>
       )}
       {language && (
-        <div className={cn("mdx-code__footer-item")}>{language}</div>
+        <div className={mc("mdx-code__footer-item")}>{language}</div>
       )}
       {lines && (
-        <div className={cn("mdx-code__footer-item hidden", "sm:flex")}>
+        <div className={mc("mdx-code__footer-item hidden", "sm:flex")}>
           Lines: {lines}
         </div>
       )}
-      <div className={cn("mdx-code__footer-item")}>UTF-8</div>
+      <div className={mc("mdx-code__footer-item")}>UTF-8</div>
     </div>
   );
 }
@@ -63,17 +63,17 @@ function Code({
   };
 
   return (
-    <div className={cn("mdx-code")}>
+    <div className={mc("mdx-code")}>
       {withCopyButton && (
         <button
           type="button"
-          className={cn("mdx-code__copy-button")}
+          className={mc("mdx-code__copy-button")}
           onClick={copyToClipboard}
           title="Copy to Clipboard"
           aria-label="Copy to Clipboard"
         >
           <div
-            className={cn("mdx-code__copy-button-message", [
+            className={mc("mdx-code__copy-button-message", [
               isCopied ? "mdx-code__copy-button-message-copied" : "",
             ])}
           >
@@ -82,7 +82,7 @@ function Code({
           <ClipboardIcon />
         </button>
       )}
-      <div className={cn("mdx-code__content")}>
+      <div className={mc("mdx-code__content")}>
         <pre ref={codeRef}>{children}</pre>
       </div>
       {withFooter && (

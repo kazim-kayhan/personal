@@ -3,8 +3,8 @@ import Link from "next/link";
 
 import useNewPosts from "../hooks/useNewPosts";
 
-import { cn } from "@repo/ui/lib/utils";
 import { relativeTime } from "../helpers/date";
+import { mc } from "merge-class";
 
 const animation = {
   hide: { y: -32, opacity: 0 },
@@ -28,7 +28,7 @@ function NewPosts({ onItemClick = () => {} }: NewPostsProps) {
   if (data?.length === 0) return null;
 
   return (
-    <div className={cn("flex flex-col gap-4")}>
+    <div className={mc("flex flex-col gap-4")}>
       <m.div
         initial="hide"
         animate="show"
@@ -36,7 +36,7 @@ function NewPosts({ onItemClick = () => {} }: NewPostsProps) {
           delayChildren: 0.06,
           staggerChildren: 0.12,
         }}
-        className={cn(
+        className={mc(
           "scrollbar-hide flex flex-1 flex-col gap-2 overflow-y-auto p-2",
         )}
       >
@@ -51,19 +51,19 @@ function NewPosts({ onItemClick = () => {} }: NewPostsProps) {
                   onClick={() => {
                     onItemClick();
                   }}
-                  className={cn(
+                  className={mc(
                     "border-divider-light block rounded-xl border bg-white/50 p-4 text-sm backdrop-blur",
                     "dark:border-divider-dark dark:bg-slate-900/60",
                   )}
                 >
                   <div
-                    className={cn(
+                    className={mc(
                       "mb-2 flex items-center justify-between text-xs text-slate-600",
                       "dark:text-slate-400",
                     )}
                   >
                     <span
-                      className={cn(
+                      className={mc(
                         "bg-accent-100 text-accent-900 flex h-5 items-center rounded-md px-1.5 text-[10px] font-black",
                         "dark:bg-accent-800 dark:text-accent-100",
                       )}
@@ -72,7 +72,7 @@ function NewPosts({ onItemClick = () => {} }: NewPostsProps) {
                     </span>
                     <span>{relativeTime(createdAt)}</span>
                   </div>
-                  <span className={cn("text-base font-medium")}>{title}</span>
+                  <span className={mc("text-base font-medium")}>{title}</span>
                 </Link>
               </m.div>
             );

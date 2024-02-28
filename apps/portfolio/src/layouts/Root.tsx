@@ -1,4 +1,4 @@
-import { cn } from "@repo/ui/lib/utils";
+import { mc } from "merge-class";
 import {
   JetBrains_Mono as JetBrainsMono,
   Plus_Jakarta_Sans as PlusJakartaSans,
@@ -26,7 +26,7 @@ function Root({ children }: PropsWithChildren) {
   return (
     <div
       id="__root"
-      className={cn([jetbrainsMono.variable, plusJakartaSans.variable])}
+      className={mc([jetbrainsMono.variable, plusJakartaSans.variable])}
     >
       {children}
     </div>

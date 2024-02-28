@@ -1,16 +1,16 @@
-import { cn } from "@repo/ui/lib/utils";
+import { mc } from "merge-class";
 import type { PropsWithChildren } from "react";
 
 function WithTableOfContentsMock({ children = null }: PropsWithChildren) {
   return (
-    <div className={cn("content-wrapper")}>
-      <div className={cn("flex flex-row-reverse gap-8", "xl:gap-24")}>
-        <div className={cn("-mt-48 hidden", "lg:block")}>
+    <div className={mc("content-wrapper")}>
+      <div className={mc("flex flex-row-reverse gap-8", "xl:gap-24")}>
+        <div className={mc("-mt-48 hidden", "lg:block")}>
           {/* mock table of contents width */}
-          <div className={cn("w-64", "xl:w-[272px]")} />
+          <div className={mc("w-64", "xl:w-[272px]")} />
         </div>
-        <div className={cn("min-w-0 flex-1")}>{children}</div>
-        <div className={cn("hidden", " lg:block")} />
+        <div className={mc("min-w-0 flex-1")}>{children}</div>
+        <div className={mc("hidden", " lg:block")} />
       </div>
     </div>
   );

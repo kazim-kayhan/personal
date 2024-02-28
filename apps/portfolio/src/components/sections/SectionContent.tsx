@@ -1,15 +1,15 @@
-import { cn } from "@repo/ui/lib/utils";
+import { mc } from "merge-class";
 import type { PropsWithChildren } from "react";
 
 function SectionContent({ children }: PropsWithChildren) {
   return (
     <div
-      className={cn(
+      className={mc(
         "background-grid background-grid--fade-out mt-20 border-t border-divider-light",
         "dark:border-divider-dark",
       )}
     >
-      <div className={cn("content-wrapper pb-20")}>{children}</div>
+      <div className={mc("content-wrapper pb-20")}>{children}</div>
     </div>
   );
 }

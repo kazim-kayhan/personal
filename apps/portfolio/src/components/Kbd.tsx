@@ -1,10 +1,10 @@
-import { cn } from "@repo/ui/lib/utils";
+import { mc } from "merge-class";
 import type { PropsWithChildren } from "react";
 
 function Kbd({ children }: PropsWithChildren) {
   return (
     <kbd
-      className={cn(
+      className={mc(
         "rounded-[4px] border border-b-[3px] border-slate-400 bg-slate-300 px-1 py-0.5 font-mono",
         "dark:border-slate-300 dark:bg-transparent",
       )}

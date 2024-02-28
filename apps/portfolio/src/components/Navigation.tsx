@@ -8,8 +8,8 @@ import NavLinkDropdown from "./navigations/NavLinkDropdown";
 import NavLinkExpanded from "./navigations/NavLinkExpanded";
 import NavLogo from "./navigations/NavLogo";
 
-import { cn } from "@repo/ui/lib/utils";
 import useOnScroll from "../hooks/useOnScroll";
+import { mc } from "merge-class";
 
 const workLinks = [
   { title: "Skills & Tools", href: "/work/skills-and-tools" },
@@ -22,10 +22,10 @@ function Navbar() {
 
   return (
     <header
-      className={cn("fixed top-0 right-0 left-0 z-[1000]", "fm:absolute")}
+      className={mc("fixed top-0 right-0 left-0 z-[1000]", "fm:absolute")}
     >
       <div
-        className={cn(
+        className={mc(
           "fixed inset-0 h-16",
           [
             isScrolled === true && [
@@ -36,17 +36,17 @@ function Navbar() {
           "fm:hidden",
         )}
       />
-      <div className={cn("h-2", [isScrolled === true && ["-mt-2"]])} />
-      <div className={cn("content-wrapper-max")}>
+      <div className={mc("h-2", [isScrolled === true && ["-mt-2"]])} />
+      <div className={mc("content-wrapper-max")}>
         <div
-          className={cn(
+          className={mc(
             "relative z-50 flex h-16 items-center justify-between px-2 text-sm",
             "md:px-4",
           )}
         >
-          <nav className={cn("flex", "md:gap-2")} data-accent="violet">
+          <nav className={mc("flex", "md:gap-2")} data-accent="violet">
             <NavLogo href="/" title="Home" />
-            <ul className={cn("flex items-center", "md:gap-1")}>
+            <ul className={mc("flex items-center", "md:gap-1")}>
               <li>
                 <NavLink title="Projects" href="/projects" />
               </li>
@@ -56,38 +56,38 @@ function Navbar() {
               <li>
                 <NavLink title="T.I.L" href="/today-i-learned" />
               </li>
-              <li className={cn("lg:hidden")} data-accent="blue">
+              <li className={mc("lg:hidden")} data-accent="blue">
                 <NavLinkDropdown title="Work" items={workLinks} />
               </li>
-              <li className={cn("hidden lg:block")} data-accent="blue">
+              <li className={mc("hidden lg:block")} data-accent="blue">
                 <NavLinkExpanded title="Work" items={workLinks} />
               </li>
             </ul>
           </nav>
-          <ul className={cn("flex items-center")}>
-            <li className={cn("hidden", "sm:block")}>
+          <ul className={mc("flex items-center")}>
+            <li className={mc("hidden", "sm:block")}>
               <NavIcon
                 href="https://twitter.com/topfront"
-                icon={<TwitterIcon className={cn("h-5 w-5")} />}
+                icon={<TwitterIcon className={mc("h-5 w-5")} />}
                 title="Twitter"
               />
             </li>
-            <li className={cn("hidden", "sm:block")}>
+            <li className={mc("hidden", "sm:block")}>
               <NavIcon
                 href="https://github.com/topfront"
-                icon={<GitHubIcon className={cn("h-5 w-5")} />}
+                icon={<GitHubIcon className={mc("h-5 w-5")} />}
                 title="GitHub"
               />
             </li>
-            <li className={cn("hidden", "sm:block")}>
+            <li className={mc("hidden", "sm:block")}>
               <div
-                className={cn(
+                className={mc(
                   "ml-2 mr-4 h-3 w-[1px] bg-slate-200",
                   "dark:bg-slate-700",
                 )}
               />
             </li>
-            <li className={cn("mr-2")}>
+            <li className={mc("mr-2")}>
               <NavIconQuickAccess />
             </li>
           </ul>

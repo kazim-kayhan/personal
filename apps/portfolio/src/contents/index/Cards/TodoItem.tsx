@@ -1,4 +1,4 @@
-import { cn } from "@repo/ui/lib/utils";
+import { mc } from "merge-class";
 import { CalendarIcon } from "../../../components/Icons";
 
 export type TodoItemState = "spacing" | "typography" | "colors" | "effects";
@@ -22,7 +22,7 @@ function TodoItem({
 }: TodoItemProps) {
   return (
     <div
-      className={cn(
+      className={mc(
         "pointer-events-none w-full select-none border p-6",
         "lg:w-96",
         state.includes("effects") && ["rounded-xl "],
@@ -38,14 +38,14 @@ function TodoItem({
       role="presentation"
     >
       <div
-        className={cn(
+        className={mc(
           "flex items-center",
           state.includes("spacing") && ["mb-4 justify-between"],
         )}
       >
-        <div className={cn("flex")}>
+        <div className={mc("flex")}>
           <div
-            className={cn(
+            className={mc(
               "relative flex h-8 w-8 items-center justify-center",
               state.includes("effects") && ["rounded-full"],
               state.includes("spacing") && [""],
@@ -62,7 +62,7 @@ function TodoItem({
           </div>
         </div>
         <div
-          className={cn(
+          className={mc(
             state.includes("effects") && ["rounded-full"],
             state.includes("spacing") && ["px-2 py-0.5"],
             state.includes("typography") && ["text-xs font-bold"],
@@ -78,7 +78,7 @@ function TodoItem({
         </div>
       </div>
       <div
-        className={cn(
+        className={mc(
           state.includes("spacing") && ["mb-1"],
           state.includes("typography") && ["text-lg font-bold"],
           state.includes("colors")
@@ -89,7 +89,7 @@ function TodoItem({
         {title}
       </div>
       <div
-        className={cn(
+        className={mc(
           state.includes("spacing") && ["mb-4"],
           state.includes("typography") && [""],
           state.includes("colors")
@@ -100,7 +100,7 @@ function TodoItem({
         {description}
       </div>
       <div
-        className={cn(
+        className={mc(
           "flex",
           state.includes("spacing") && ["mb-6 gap-2"],
           state.includes("typography") && ["text-xs font-bold"],
@@ -108,7 +108,7 @@ function TodoItem({
         )}
       >
         <div
-          className={cn(
+          className={mc(
             state.includes("effects") && ["rounded-full"],
             state.includes("spacing") && ["px-2 py-0.5"],
             state.includes("typography") && [""],
@@ -123,7 +123,7 @@ function TodoItem({
           {tag1}
         </div>
         <div
-          className={cn(
+          className={mc(
             state.includes("effects") && ["rounded-full"],
             state.includes("spacing") && ["px-2 py-0.5"],
             state.includes("typography") && [""],
@@ -139,7 +139,7 @@ function TodoItem({
         </div>
       </div>
       <div
-        className={cn(
+        className={mc(
           "flex items-center",
           state.includes("spacing") && ["gap-1 "],
           state.includes("typography") && ["text-xs font-medium"],
@@ -147,7 +147,7 @@ function TodoItem({
         )}
       >
         <CalendarIcon
-          className={cn(
+          className={mc(
             "h-4 w-4",
             state.includes("spacing") && ["-mt-1"],
             state.includes("typography") && [""],
@@ -157,7 +157,7 @@ function TodoItem({
           )}
         />
         <div
-          className={cn(
+          className={mc(
             state.includes("spacing") && [""],
             state.includes("typography") && [""],
             state.includes("colors")

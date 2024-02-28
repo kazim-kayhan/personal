@@ -1,4 +1,4 @@
-import { cn } from "@repo/ui/lib/utils";
+import { mc } from "merge-class";
 import { useState } from "react";
 
 function AccentDemo() {
@@ -36,7 +36,7 @@ function AccentDemo() {
   };
 
   return (
-    <div className={cn("my-12 flex items-center justify-center")}>
+    <div className={mc("my-12 flex items-center justify-center")}>
       {/* eslint-disable-next-line react/no-unknown-property */}
       <style jsx global>
         {`
@@ -95,7 +95,7 @@ function AccentDemo() {
       </style>
       <button
         type="button"
-        className={cn("button button--solid button--big")}
+        className={mc("button button--solid button--big")}
         onClick={handleClick}
       >
         {getButtonText(accent)}

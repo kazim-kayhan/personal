@@ -8,8 +8,8 @@ import SectionTitle from "../../components/sections/SectionTitle";
 
 import TodoItem from "./Cards/TodoItem";
 
-import { cn } from "@repo/ui/lib/utils";
 import type { TodoItemState } from "./Cards/TodoItem";
+import { mc } from "merge-class";
 
 type Content = {
   state: TodoItemState;
@@ -50,7 +50,7 @@ function CleanIntuitive() {
 
   return (
     <>
-      <header className={cn("mb-8 relative")}>
+      <header className={mc("mb-8 relative")}>
         <SectionTitle
           title="Eye Catching, Modern & Minimalist Design."
           caption="Clean & Intuitive"
@@ -59,8 +59,8 @@ function CleanIntuitive() {
         />
       </header>
       <SectionContent>
-        <div className={cn("flex", "lg:gap-12")}>
-          <div className={cn("-mt-8 hidden flex-1 flex-col gap-3", "lg:flex")}>
+        <div className={mc("flex", "lg:gap-12")}>
+          <div className={mc("-mt-8 hidden flex-1 flex-col gap-3", "lg:flex")}>
             {content.map((item, i) => (
               <SectionButton
                 key={item.state}
@@ -73,10 +73,10 @@ function CleanIntuitive() {
             ))}
           </div>
           <div
-            className={cn("relative flex flex-1 items-center justify-center")}
+            className={mc("relative flex flex-1 items-center justify-center")}
           >
             <div
-              className={cn("-mt-8 flex gap-4", "md:gap-6 lg:top-8 lg:mt-0")}
+              className={mc("-mt-8 flex gap-4", "md:gap-6 lg:top-8 lg:mt-0")}
             >
               <div>
                 <TodoItem
@@ -87,7 +87,7 @@ function CleanIntuitive() {
                   }
                 />
               </div>
-              <div className={cn("hidden", "sm:block lg:hidden")}>
+              <div className={mc("hidden", "sm:block lg:hidden")}>
                 <TodoItem
                   state={
                     currentState
